@@ -10,14 +10,14 @@ Simple calculator API hosted on APIMATIC
 Run the following command from your project directory to install the package from npm:
 
 ```ts
-npm install typescript-package-sdk@2.2.0
+npm install typescript-package-sdk@2.2.2
 ```
 
-For additional package details, see the [Npm page for the typescript-package-sdk@2.2.0  npm](https://www.npmjs.com/package/typescript-package-sdk/v/2.2.0).
+For additional package details, see the [Npm page for the typescript-package-sdk@2.2.2  npm](https://www.npmjs.com/package/typescript-package-sdk/v/2.2.2).
 
 ## Initialize the API Client
 
-**_Note:_** Documentation for the client can be found [here.](https://www.github.com/aliraza1231/testing-typescript-sdk/tree/2.2.0/doc/client.md)
+**_Note:_** Documentation for the client can be found [here.](https://www.github.com/aliraza1231/testing-typescript-sdk/tree/2.2.2/doc/client.md)
 
 The following parameters are configurable for the API Client:
 
@@ -60,10 +60,10 @@ const client = new Client({
 
 ## List of APIs
 
-* [Simple Calculator](https://www.github.com/aliraza1231/testing-typescript-sdk/tree/2.2.0/doc/controllers/simple-calculator.md)
+* [Simple Calculator](https://www.github.com/aliraza1231/testing-typescript-sdk/tree/2.2.2/doc/controllers/simple-calculator.md)
 
 ## Classes Documentation
 
-* [ApiResponse](https://www.github.com/aliraza1231/testing-typescript-sdk/tree/2.2.0/doc/api-response.md)
-* [ApiError](https://www.github.com/aliraza1231/testing-typescript-sdk/tree/2.2.0/doc/api-error.md)
+* [ApiResponse](https://www.github.com/aliraza1231/testing-typescript-sdk/tree/2.2.2/doc/api-response.md)
+* [ApiError](https://www.github.com/aliraza1231/testing-typescript-sdk/tree/2.2.2/doc/api-error.md)
 
