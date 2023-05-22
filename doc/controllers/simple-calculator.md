@@ -1,7 +1,7 @@
 # Simple Calculator
 
-```ts
-const simpleCalculatorController = new SimpleCalculatorController(client);
+```csharp
+SimpleCalculatorController simpleCalculatorController = client.SimpleCalculatorController;
 ```
 
 ## Class Name
@@ -13,47 +13,41 @@ const simpleCalculatorController = new SimpleCalculatorController(client);
 
 Calculates the expression using the specified operation.
 
-```ts
-async getCalculate(
-  operation: OperationTypeEnum,
-  x: number,
-  y: number,
-  requestOptions?: RequestOptions
-): Promise<ApiResponse<number>>
+```csharp
+GetCalculateAsync(
+    Models.GetCalculateInput input)
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `operation` | [`OperationTypeEnum`](../../doc/models/operation-type-enum.md) | Template, Required | The operator to apply on the variables |
-| `x` | `number` | Query, Required | The LHS value |
-| `y` | `number` | Query, Required | The RHS value |
-| `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
+| `operation` | [`Models.OperationTypeEnum`](../../doc/models/operation-type-enum.md) | Template, Required | The operator to apply on the variables |
+| `x` | `double` | Query, Required | The LHS value |
+| `y` | `double` | Query, Required | The RHS value |
 
 ## Response Type
 
-`number`
+`Task<double>`
 
 ## Example Usage
 
-```ts
-const collect = {
-  operation: OperationTypeEnum.MULTIPLY,
-  x: 222.14,
-  y: 165.14
+```csharp
+GetCalculateInput getCalculateInput = new GetCalculateInput
+{
+    Operation = OperationTypeEnum.MULTIPLY,
+    X = 222.14,
+    Y = 165.14,
+};
+
+try
+{
+    double? result = await simpleCalculatorController.GetCalculateAsync(getCalculateInput);
 }
-try {
-  async () => {
-    const { result,...httpResponse } = await simpleCalculatorController.getCalculate(collect);
-  // Get more response info...
-  // const { statusCode, headers } = httpResponse;
-  }
-} catch(error) {
-  if (error instanceof ApiError) {
-    const errors = error as ApiError;
-    // const { statusCode, headers } = error;
-  }
+catch (ApiException e)
+{
+    // TODO: Handle exception here
+    Console.WriteLine(e.Message);
 }
 ```
 
